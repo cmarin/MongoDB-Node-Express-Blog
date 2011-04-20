@@ -1,0 +1,15 @@
+<form method="post">
+  <div>
+    <div>
+      <span>Title :</span>
+      <input type="text" name="title" id="editPostTitle" value="<%= post.title %>" />
+    </div>
+    <div>
+      <span>Body :</span>
+      <textarea name="body" rows="20" id="editPostBody"><%= post.body %></textarea>
+    </div>
+    <div id='editPostSubmit'>
+      <input type="submit" value="Send" />
+    </div>
+  </div>
+</form>

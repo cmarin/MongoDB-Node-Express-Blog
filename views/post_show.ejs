@@ -1,0 +1,26 @@
+<h1></h1>
+<div class='post'>
+  <div class='created_at'><%= post.created_at %></div>
+  <div class='title'><%= post.title %></div>
+  <div class='body'><%= post.body %></div>
+  <div class='comment'>
+    <%- partial('comment', post.comments) %>
+  </div>
+  <div>
+    <form method="post" action="/posts/addComment">
+      <input type="hidden" name="_id" value="<%= post._id.toHexString() %>" />
+      <div>
+        <span>Author :</span>
+        <input type="text" name="person" id="addCommentPerson" />
+      </div>
+      <div>
+        <span>Comment :</span>
+        <textarea name="comment" rows="5" id="addCommentComment"></textarea>
+      </div>
+      <div id='editPostSubmit'>
+        <input type="submit" value="Send" />
+      </div>
+    </form>
+  </div>
+   <a href="/posts/<%= post._id.toHexString() %>/edit">Edit</a>
+</div>
